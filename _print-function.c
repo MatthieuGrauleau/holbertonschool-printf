@@ -20,7 +20,7 @@ void print_s(va_list args)
 	char *s;
 	int len, i;
 
-	s = va_arg(args, int);
+	s = va_arg(args, char *);
 	len = _strlen(s);
 
 	for (i = 0; i < len; i++)
