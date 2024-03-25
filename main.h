@@ -8,6 +8,7 @@
 
 int _printf(const char *format, ...);
 void print_c(va_list args);
+int _putchar(char c);
 
 /**
  * struct type - Struct type
