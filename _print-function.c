@@ -17,10 +17,15 @@ void print_c(va_list args)
 
 void print_s(va_list args)
 {
-	char s;
+	char *s;
 	int len, i;
 
-	len = strlen
 	s = va_arg(args, int);
-	_putchar
+	len = _strlen(s);
+
+	for (i = 0; i < len; i++)
+	{
+		_putchar(s[i]);
+	}
+	_putchar('\n');
 }
