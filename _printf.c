@@ -25,11 +25,12 @@ int _printf(const char *format, ...)
         {
             if (style[j].type == format[i])
             {
-                
+                style[j].f(args);
             }
-            
+            j++;
         }
-        
+        i++;
     }
+    va_end(args);
     return(1);
 }
