@@ -11,7 +11,8 @@ int _printf(const char *format, ...)
     va_list args;
     int i, j;
     type_t style[] = {
-        {'c', print_c}
+        {'c', print_c},
+        {'s', print_s}
     };
 
     va_start(args, format);
