@@ -12,7 +12,8 @@ int _printf(const char *format, ...)
     int i, j;
     type_t style[] = {
         {'c', print_c},
-        {'s', print_s}
+        {'s', print_s},
+        {'%', print_percentage}
     };
 
     va_start(args, format);

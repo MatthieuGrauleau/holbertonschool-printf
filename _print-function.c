@@ -29,3 +29,8 @@ void print_s(va_list args)
 	}
 	_putchar('\n');
 }
+
+void print_percentage(va_list args, int)
+{
+	_putchar('%');
+}
