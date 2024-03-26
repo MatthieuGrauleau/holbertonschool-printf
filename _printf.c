@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, j;
+	int i, j, count = 0;
 	type_t style[] = {
 		{'c', print_c},
 		{'s', print_s}
@@ -25,6 +25,7 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == '%')
 			{
 				print_percentage();
+				count++;
 				i++;
 			} else
 			{
@@ -33,7 +34,7 @@ int _printf(const char *format, ...)
 				{
 					if (style[j].type == format[i + 1])
 					{
-						style[j].f(args);
+						count += style[j].f(args);
 						i++;
 					}
 						j++;
@@ -43,9 +44,10 @@ int _printf(const char *format, ...)
 		else
 		{
 			_putchar(format[i]);
+			count++;
 		}
 			i++;
 	}
 		va_end(args);
-		return (1);
+		return (count);
 }
