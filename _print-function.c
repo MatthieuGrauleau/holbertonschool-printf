@@ -30,6 +30,11 @@ int print_s(va_list args)
 	s = va_arg(args, char *);
 	len = _strlen(s);
 
+	if (s == NULL)
+	{
+		s = "(nill)";
+	}
+	
 	for (i = 0; i < len; i++)
 	{
 		_putchar (s[i]);
