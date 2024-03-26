@@ -14,7 +14,6 @@ int print_c(va_list args)
 
 	c = va_arg(args, int);
 	_putchar(c);
-	_putchar('\n');
 	return (1);
 }
 
@@ -38,7 +37,6 @@ int print_s(va_list args)
 	{
 		_putchar (s[i]);
 	}
-	_putchar('\n');
 	return (1);
 }
 
