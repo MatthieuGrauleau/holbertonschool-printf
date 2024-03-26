@@ -28,12 +28,12 @@ int print_s(va_list args)
 	int len, i;
 
 	s = va_arg(args, char *);
-	len = _strlen(s);
 
 	if (s == NULL)
 	{
 		s = "(null)";
 	}
+	len = _strlen(s);
 
 	for (i = 0; i < len; i++)
 	{
