@@ -4,6 +4,8 @@
 * print_c - print a character
 *
 * @args: arguments to prints
+*
+* Return: character
 */
 
 int print_c(va_list args)
@@ -13,8 +15,16 @@ int print_c(va_list args)
 	c = va_arg(args, int);
 	_putchar(c);
 	_putchar('\n');
-	return(1);
+	return (1);
 }
+
+/**
+* print_s - print a string
+*
+* @args: arguments to print
+*
+* Return: String
+*/
 
 int print_s(va_list args)
 {
@@ -26,11 +36,17 @@ int print_s(va_list args)
 
 	for (i = 0; i < len; i++)
 	{
-		_putchar(s[i]);
+		_putchar (s[i]);
 	}
 	_putchar('\n');
-	return(1);
+	return (1);
 }
+
+/**
+ * print_percentage -print a percentage
+ *
+ * Return: percentage
+*/
 
 int print_percentage(void)
 {
