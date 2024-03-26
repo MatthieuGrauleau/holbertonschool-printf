@@ -15,15 +15,15 @@ int _strlen(char *s);
 
 /**
  * struct type - Struct type
- * 
+ *
  * @type: the type
  * @f: the function associated
 */
 
 typedef struct type
 {
-    char type;
-    int (*f)();
+	char type;
+	int (*f)();
 } type_t;
 
 #endif
