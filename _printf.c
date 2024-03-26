@@ -37,7 +37,6 @@ int _printf(const char *format, ...)
                     {
                         style[j].f(args);
                         i++;
-                        break;
                     }
                     j++;
                 }
