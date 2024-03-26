@@ -12,7 +12,9 @@ int _printf(const char *format, ...)
     int i, j;
     type_t style[] = {
         {'c', print_c},
-        {'s', print_s}
+        {'s', print_s},
+        {'%', print_percentage},
+        {0, NULL}
     };
 
     va_start(args, format);
@@ -21,14 +23,26 @@ int _printf(const char *format, ...)
 
     while (format && format[i])
     {
-        j = 0;
-        while (style[j].type)
+        if (format[i] == '%')
         {
-            if (style[j].type == format[i])
+            if (format[i + 1] == '%')
             {
-                style[j].f(args);
+                print_percentage();
+                i++;
+            } else{
+                j = 0;
+                while (style[j].type)
+                {
+                    if (style[j].type == format[i + 1])
+                    {
+                        style[j].f(args);
+                        i++;
+                    }
+                    j++;
+                }
             }
-            j++;
+        } else {
+            _putchar(format[i]);
         }
         i++;
     }

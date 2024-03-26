@@ -7,8 +7,9 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-void print_c(va_list args);
-void print_s(va_list args);
+int print_c(va_list args);
+int print_s(va_list args);
+int print_percentage(void);
 int _putchar(char c);
 int _strlen(char *s);
 
@@ -22,7 +23,7 @@ int _strlen(char *s);
 typedef struct type
 {
     char type;
-    void (*f)(va_list);
+    int (*f)();
 } type_t;
 
 #endif

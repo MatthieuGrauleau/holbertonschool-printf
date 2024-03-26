@@ -6,16 +6,16 @@
 * @args: arguments to prints
 */
 
-void print_c(va_list args)
+int print_c(va_list args)
 {
 	char c;
 
 	c = va_arg(args, int);
 	_putchar(c);
-	_putchar('\n');
+	return(1);
 }
 
-void print_s(va_list args)
+int print_s(va_list args)
 {
 	char *s;
 	int len, i;
@@ -27,5 +27,11 @@ void print_s(va_list args)
 	{
 		_putchar(s[i]);
 	}
-	_putchar('\n');
+	return(1);
+}
+
+int print_percentage(void)
+{
+	_putchar(37);
+	return (1);
 }
