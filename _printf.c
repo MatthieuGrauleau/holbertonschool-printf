@@ -25,14 +25,22 @@ int _printf(const char *format, ...)
     {
         if (format[i] == '%')
         {
-            j = 0;
-            while (style[j].type)
+            if (format[i + 1] == '%')
             {
-                if (style[j].type == format[i])
+                print_percentage();
+                i++;
+            } else{
+                j = 0;
+                while (style[j].type)
                 {
-                    style[j].f(args);
+                    if (style[j].type == format[i + 1])
+                    {
+                        style[j].f(args);
+                        i++;
+                        break;
+                    }
+                    j++;
                 }
-                j++;
             }
         } else {
             _putchar(format[i]);
