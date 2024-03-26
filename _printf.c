@@ -29,6 +29,7 @@ int _printf(const char *format, ...)
 				if (style[j].type == format[i])
 				{
 					count += style[j].f(args);
+					break;
 				}
 			}
 		}
