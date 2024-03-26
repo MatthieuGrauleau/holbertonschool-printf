@@ -13,31 +13,27 @@ int _printf(const char *format, ...)
 	int i, j, count = 0;
 	type_t style[] = {
 		{'c', print_c},
-		{'s', print_s}
+		{'s', print_s},
+		{'%', print_percentage}
 		};
 	va_start(args, format);
-	i = 0;
 
-	while (format && format[i])
+	for (i = 0; format && format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '%')
+			if (format[++i] == '%')
 			{
 				print_percentage();
 				count++;
-				i++;
 			} else
 			{
-				j = 0;
-				while (style[j].type)
+				for (j = 0; style[j].type; j++)
 				{
-					if (style[j].type == format[i + 1])
+					if (style[j].type == format[i])
 					{
 						count += style[j].f(args);
-						i++;
 					}
-						j++;
 				}
 			}
 		}
@@ -46,7 +42,6 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			count++;
 		}
-			i++;
 	}
 		va_end(args);
 		return (count);
