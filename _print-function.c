@@ -32,9 +32,9 @@ int print_s(va_list args)
 
 	if (s == NULL)
 	{
-		s = "(nill)";
+		s = "(null)";
 	}
-	
+
 	for (i = 0; i < len; i++)
 	{
 		_putchar (s[i]);
