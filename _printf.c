@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	for (i = 0; format && format[i]; i++)
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] != 'K' && format[i + 1] != '!')
 		{
 			i++;
 			for (j = 0; style[j].type; j++)
