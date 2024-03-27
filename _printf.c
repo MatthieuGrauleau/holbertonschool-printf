@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	type_t style[] = {
 		{'c', print_c},
 		{'s', print_s},
+<<<<<<< HEAD
 		{'%', print_percentage}
 		};
 		va_start(args, format);
@@ -29,6 +30,26 @@ int _printf(const char *format, ...)
 					{
 						count += style[j].f(args);
 						}
+=======
+		{'%', print_percentage},
+		{'d', print_d},
+		{0, NULL}
+		};
+	va_start(args, format);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
+	for (i = 0; format && format[i]; i++)
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			for (j = 0; style[j].type; j++)
+			{
+				if (style[j].type == format[i])
+				{
+					count += style[j].f(args);
+					break;
+>>>>>>> main
 				}
 			}
 			else
@@ -37,6 +58,17 @@ int _printf(const char *format, ...)
 				count++;
 			}
 		}
+<<<<<<< HEAD
 	va_end(args);
 	return (count);
+=======
+		else
+		{
+			_putchar(format[i]);
+			count++;
+		}
+	}
+		va_end(args);
+		return (count);
+>>>>>>> main
 }
