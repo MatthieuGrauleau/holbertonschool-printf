@@ -37,7 +37,7 @@ int print_s(va_list args)
 	{
 		_putchar (s[i]);
 	}
-	return (1);
+	return (len);
 }
 
 /**
