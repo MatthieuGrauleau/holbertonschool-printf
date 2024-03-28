@@ -24,16 +24,16 @@ Upon successful completion, the _printf() function returns the number of charact
 If an error occurs, it returns -1.
 
 .SH c
-The format specifier is %c and this is used to format a single  character.
+The format specifier is %c and this is used to print a single  character.
 
 .SH s
-The format specifier is %s and this is used to format a string.
+The format specifier is %s and this is used to print a string.
 
 .SH %
-The format specifier is %% and this is used to format a percent.
+The format specifier is %% and this is used to print a percent.
 
 .SH d
-The format specifier is %d and this is used to format a decimal.
+The format specifier is %d and this is used to print a decimal.
 
 .SH EXAMPLE
 
@@ -41,16 +41,19 @@ _printf("Let's try to printf a simple sentence.");
 output: Let's try to printf a simple sentence.
 
 _printf("%c", 'H');
-output: H. display a character H contain in c.
+output: H. 
+display a character H contain in c.
 
 _printf("%s", "I am a string !");
-output: I am a string ! display a string I am a string ! contain in s.
+output: I am a string ! 
+display a string I am a string ! contain in s.
 
 _printf("%%");
-output: %. display a percentage % contain in %.
+output: %. 
+display a percentage % contain in %.
 
 .SH BUGS
-we don't have seen any bugs for the moment.
+we don't have seen any bugs for the moment. if there is any don't hesitate to send us a mail.
 
 .SH AUTHOR
 Grauleau matthieu (8822@holbertonstudents.com) and Maël Salet (8920@holbertonstudents.com).
