@@ -35,6 +35,20 @@ The format specifier is %% and this is used to format a percent.
 .SH d
 The format specifier is %d and this is used to format a decimal.
 
+.SH EXAMPLE
+
+_printf("Let's try to printf a simple sentence.");
+output: Let's try to printf a simple sentence.
+
+_printf("%c", 'H');
+output: H. display a character H contain in c.
+
+_printf("%s", "I am a string !");
+output: I am a string ! display a string I am a string ! contain in s.
+
+_printf("%%");
+output: %. display a percentage % contain in %.
+
 .SH BUGS
 we don't have seen any bugs for the moment.
 
