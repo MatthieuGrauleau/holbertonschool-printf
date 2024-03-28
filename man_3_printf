@@ -16,7 +16,7 @@ by the character '%', followed by a conversion specifier character.
 
 Supported conversion specifiers in this implementation are
 
-'c' (character), 's' (string), '%' (percentage), 'd' (integer), and 'i' (integer).
+'c' (character), 's' (string), '%' (percentage), 'd' (decimal), and 'i' (integer).
 
 .SH RETURN
 Upon successful completion, the _printf() function returns the number of characters printed 
@@ -39,4 +39,4 @@ The format specifier is %d and this is used to format a decimal.
 we don't have seen any bugs for the moment.
 
 .SH AUTHOR
-Grauleau matthieu (8822@holbertonstudents.com) and Maël Salet ().
+Grauleau matthieu (8822@holbertonstudents.com) and Maël Salet (8920@holbertonstudents.com).
