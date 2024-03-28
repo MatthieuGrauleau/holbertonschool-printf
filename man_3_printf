@@ -1,4 +1,4 @@
-.TH PRINTF "27 Mars 2024" "1.0" "printf man pag"
+.TH PRINTF "27 Mars 2024" "1.0" "printf man page"
 .SH NAME
 printf
 .SH SYNOPSIS
@@ -23,4 +23,20 @@ Upon successful completion, the _printf() function returns the number of charact
 (excluding the null byte used to end output to strings).
 If an error occurs, it returns -1.
 
-.SH EXAMPLE
+.SH c
+The format specifier is %c and this is used to format a single  character.
+
+.SH s
+The format specifier is %s and this is used to format a string.
+
+.SH %
+The format specifier is %% and this is used to format a percent.
+
+.SH d
+The format specifier is %d and this is used to format a decimal.
+
+.SH BUGS
+we don't have seen any bugs for the moment.
+
+.SH AUTHOR
+Grauleau matthieu (8822@holbertonstudents.com) and Maël Salet ().
