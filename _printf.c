@@ -35,16 +35,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-			else
-			{
-				_putchar(format[i]);
-				count++;
-			}
 		}
-<<<<<<< HEAD
-	va_end(args);
-	return (count);
-=======
 		else
 		{
 			_putchar(format[i]);
@@ -53,5 +44,4 @@ int _printf(const char *format, ...)
 	}
 		va_end(args);
 		return (count);
->>>>>>> main
 }
