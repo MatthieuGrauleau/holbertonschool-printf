@@ -46,7 +46,7 @@ Handle the following conversion specifiers d, i.
 Create a man page for your function.
 
 ## Examples
-### Characters
+### Character
 ```
 #include "main.h"
 _printf("%c", 'H');
