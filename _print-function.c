@@ -55,45 +55,48 @@ int print_percentage(void)
 }
 
 /**
- * print_d - print a decimal
- *
- * @args: arguments to print
- *
- * Return: the number of digits printed
- */
+ * d_recur - prints integer
+ * @a: integer to print
+ * 
+*/
+void d_recur(int a)
+{
+	unsigned int b;
 
+	b = a;
+	if (b / 10)
+	{
+		d_recur(b / 10);
+	}
+	_putchar(b % 10 + '0');
+}
+
+/**
+ * print_d - function that prints a decimal
+ * 
+ * @args: arguments
+ * 
+ * Return: number of characters printed
+*/
 int print_d(va_list args)
 {
-	int num = va_arg(args, int);
-	int count = 0;
-	int divisor = 1;
+	int count = 1, numcopy = 0;
+	unsigned int n;
 
-	if (num < 0)
+	n = va_arg(args, int);
+	numcopy = n;
+	if (numcopy < 0)
 	{
-		_putchar('-'); /**Print '-' for a negative number.*/
+		_putchar('-');
+		numcopy = numcopy * - 1;
+		n = numcopy;
 		count++;
-		num = -num; /**Convert the num to a positive num*/
-		}
-
-	if (num == 0)
-	{
-		_putchar('0');
-		return (1);
 	}
-
-	while (num / divisor > 9)
+	
+	for (; n > 9; n /= 10)
 	{
-		divisor *= 10; /**Increment the divisor until is greater than the num*/
-	}
-
-	while (divisor > 0)
-	{
-		int digit = num / divisor; /**Extract the last digit*/
-
-		_putchar(digit + '0');
 		count++;
-		num %= divisor; /**Update the num by removing the last digit*/
-		divisor /= 10; /**Update the divisor for the next digit*/
 	}
-	return (count);
+	d_recur(numcopy);
+	return(count);
 }
