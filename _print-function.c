@@ -70,8 +70,8 @@ int print_d(va_list args)
 
 	if (num == INT_MIN)
 	{
+		_putchar('-');
 		count++;
-		num = -INT_MAX;
 	}
 
 	if (num < 0)
