@@ -72,7 +72,7 @@ int print_d(va_list args)
 	{
 		_putchar('-');
 		count++;
-		num = -(INT_MAX % 10) - 1;
+		num = INT_MIN;
 	}
 
 	if (num < 0)
