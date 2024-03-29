@@ -54,11 +54,13 @@ int print_percentage(void)
 	return (1);
 }
 
+
 /**
  * d_recur - prints integer
  * @a: integer to print
- * 
+ *
 */
+
 void d_recur(int a)
 {
 	unsigned int b;
@@ -73,11 +75,12 @@ void d_recur(int a)
 
 /**
  * print_d - function that prints a decimal
- * 
+ *
  * @args: arguments
- * 
+ *
  * Return: number of characters printed
 */
+
 int print_d(va_list args)
 {
 	int count = 1, numcopy = 0;
@@ -88,15 +91,15 @@ int print_d(va_list args)
 	if (numcopy < 0)
 	{
 		_putchar('-');
-		numcopy = numcopy * - 1;
+		numcopy = numcopy * -1;
 		n = numcopy;
 		count++;
 	}
-	
+
 	for (; n > 9; n /= 10)
 	{
 		count++;
 	}
 	d_recur(numcopy);
-	return(count);
+	return (count);
 }
