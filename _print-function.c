@@ -68,6 +68,17 @@ int print_d(va_list args)
 	int count = 0;
 	int divisor = 1;
 
+	if (num == INT_MIN)
+	{
+		_putchar('-');
+		count++;
+	}
+	else if (num < 0)
+	{
+		_putchar('-');
+		count++;
+		num = -num;
+	}
 	if (num < 0)
 	{
 		_putchar('-'); /**Print '-' for a negative number.*/
