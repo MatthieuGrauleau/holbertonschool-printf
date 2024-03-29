@@ -54,52 +54,52 @@ int print_percentage(void)
 	return (1);
 }
 
+
 /**
- * print_d - print a decimal
- * 
- * @args: arguments to print
- * 
- * Return: the number of digits printed
- */
+ * d_recur - prints integer
+ * @a: integer to print
+ *
+*/
+
+void d_recur(int a)
+{
+	unsigned int b;
+
+	b = a;
+	if (b / 10)
+	{
+		d_recur(b / 10);
+	}
+	_putchar(b % 10 + '0');
+}
+
+/**
+ * print_d - function that prints a decimal
+ *
+ * @args: arguments
+ *
+ * Return: number of characters printed
+*/
 
 int print_d(va_list args)
 {
-    int num = va_arg(args, int);
-    int count = 0;
-    int temp = num; 
-    int num_digits = 0;  
-    int divisor = 1;  
-    int i; 
+	int count = 1, numcopy = 0;
+	unsigned int n;
 
+	n = va_arg(args, int);
+	numcopy = n;
+	if (numcopy < 0)
+	{
+		_putchar('-');
+		numcopy = numcopy * -1;
+		n = numcopy;
+		count++;
+	}
 
-    if (num < 0) {
-        _putchar('-');
-        count++;
-        num = -num;
-        temp = num; 
-    }
-
-    while (temp != 0) {
-        temp /= 10;
-        num_digits++;
-    }
-
-    if (num_digits == 0) {
-        _putchar('0');
-        return 1;
-    }
-
-    for (i = 1; i < num_digits; i++) {
-        divisor *= 10;
-    }
-
-    while (divisor > 0) {
-        int digit = num / divisor;
-        _putchar(digit + '0');
-        count++;
-        num %= divisor;
-        divisor /= 10;
-    }
-
-    return count;
+	for (; n > 9; n /= 10)
+	{
+		count++;
+	}
+	d_recur(numcopy);
+	return (count);
 }

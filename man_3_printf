@@ -1,0 +1,59 @@
+.TH PRINTF "27 Mars 2024" "1.0" "printf man page"
+.SH NAME
+printf
+.SH SYNOPSIS
+#include <main.h>
+
+int _printf(const char *format,...)
+.SH DESCRIPTION
+The _printf() function is a custom implementation of the printf() function in C, which formats and prints data to stdout according 
+
+to the format specifier format. The format specifier is a character string containing conversion specifications,
+
+ each of which results in fetching zero or more subsequent arguments. Each conversion specification is introduced
+ 
+by the character '%', followed by a conversion specifier character. 
+
+Supported conversion specifiers in this implementation are
+
+'c' (character), 's' (string), '%' (percentage), 'd' (decimal), and 'i' (integer).
+
+.SH RETURN
+Upon successful completion, the _printf() function returns the number of characters printed 
+(excluding the null byte used to end output to strings).
+If an error occurs, it returns -1.
+
+.SH c
+The format specifier is %c and this is used to print a single  character.
+
+.SH s
+The format specifier is %s and this is used to print a string.
+
+.SH %
+The format specifier is %% and this is used to print a percent.
+
+.SH d
+The format specifier is %d and this is used to print a decimal.
+
+.SH EXAMPLE
+
+_printf("Let's try to printf a simple sentence.");
+output: Let's try to printf a simple sentence.
+
+_printf("%c", 'H');
+output: H. 
+display a character H contain in c.
+
+_printf("%s", "I am a string !");
+output: I am a string ! 
+display a string I am a string ! contain in s.
+
+_printf("%%");
+output: %. 
+display a percentage % contain in %.
+
+.SH BUGS
+we don't have seen any bugs for the moment. if there is any don't hesitate to send us a mail.
+
+.SH AUTHOR
+Grauleau matthieu (8822@holbertonstudents.com) and Maël Salet (8920@holbertonstudents.com).
