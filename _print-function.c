@@ -72,7 +72,9 @@ int print_d(va_list args)
 	{
 		_putchar('-');
 		count++;
-		num = INT_MAX % 10 + 1;
+		num = INT_MAX / 10;
+		count += print_d(num % 10);
+		num /= 10;
 	}
 	else if (num < 0)
 	{
