@@ -66,41 +66,34 @@ int print_d(va_list args)
 {
 	int num = va_arg(args, int);
 	int count = 0;
-	int temp = num;
-	int num_digits = 0;
 	int divisor = 1;
-	int i;
 
 	if (num < 0)
 	{
-		_putchar('-');
+		_putchar('-'); /**Print '-' for a negative number.*/
 		count++;
-		num = -num;
-		temp = num;
+		num = -num; /**Convert the num to a positive num*/
 		}
 
-	while (temp != 0)
-	{
-		temp /= 10;
-		num_digits++;
-	}
-	if (num_digits == 0)
+	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-	for (i = 1; i < num_digits; i++)
+
+	while (num / divisor > 9)
 	{
-		divisor *= 10;
+		divisor *= 10; /**Increment the divisor until is greater than the num*/
 	}
+
 	while (divisor > 0)
 	{
-		int digit = num / divisor;
+		int digit = num / divisor; /**Extract the last digit*/
 
 		_putchar(digit + '0');
 		count++;
-		num %= divisor;
-		divisor /= 10;
+		num %= divisor; /**Update the num by removing the last digit*/
+		divisor /= 10; /**Update the divisor for the next digit*/
 	}
 	return (count);
 }
