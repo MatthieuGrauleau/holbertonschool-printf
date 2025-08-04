@@ -82,7 +82,6 @@ if you want to see more details of the functions printf, [click here](https://gi
 ![flowchart](https://github.com/MatthieuGrauleau/holbertonschool-printf/blob/main/flowchart.png)
 ## Authors
 This project was made by :
-* <[Maël Salet](https://github.com/Elmael33)>
 * <[Matthieu Grauleau](https://github.com/MatthieuGrauleau)>
 
 ## License
